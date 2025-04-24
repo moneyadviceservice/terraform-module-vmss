@@ -76,3 +76,20 @@ variable "vm_type" {
     error_message = "Unknown VM type. Must be either 'windows' or 'linux'"
   }
 }
+
+variable "vm_admin_password" {
+  type        = string
+  sensitive   = true
+  description = "The Admin password for the virtual Machine Scale Set."
+}
+
+variable "vm_availabilty_zones" {
+  type        = list(any)
+  description = "The availability zones to deploy the VM in"
+}
+
+variable "custom_data" {
+  type        = string
+  description = "Custom data to pass to the virtual machine."
+  default     = null
+}
